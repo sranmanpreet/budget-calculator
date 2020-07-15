@@ -1,0 +1,16 @@
+.expense-form-container {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    padding: 15px;
+    justify-content: center;
+    form {
+        width: 100%;
+        .column {
+            height: fit-content;
+        }
+    }
+    .columns {
+        height: fit-content;
+    }
+}
