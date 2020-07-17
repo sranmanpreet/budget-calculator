@@ -2,8 +2,12 @@
 .entry-container {
     background: $beige-light;
     display: flex;
-    padding: 10px;
+    padding: 5px 20px;
     border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 2px;
+    position: relative;
     .entry-description {
         color: $green;
     }
@@ -13,5 +17,33 @@
         padding: 2px 10px;
         border-radius: 3px;
         margin-left: auto;
+    }
+    .delete {
+        opacity: 0;
+        transition-delay: 0.1s;
+        position: absolute;
+        top: -2px;
+        right: -2px;
+        background: $pink;
+        &:hover {
+            background: darken($pink, 10);
+        }
+        &:active {
+            background: darken($pink, 25);
+        }
+    }
+    &:hover {
+        background: $primary;
+        cursor: pointer;
+        .entry-description {
+            color: $white;
+        }
+        .entry-amount {
+            color: darken($color: $green, $amount: 10);
+            background: lighten($color: $green, $amount: 10);
+        }
+        .delete {
+            opacity: 1;
+        }
     }
 }

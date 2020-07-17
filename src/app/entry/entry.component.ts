@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EntryComponent implements OnInit {
 
+  showEntryDetail: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  showDetails(){
+    this.showEntryDetail = true;
   }
 
 }

@@ -12,5 +12,14 @@
     }
     .columns {
         height: fit-content;
+        .column {
+            button {
+                width: 100%;
+            }
+        }
     }
+}
+
+input::placeholder {
+    font-size: 0.7rem;
 }

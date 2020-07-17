@@ -7,6 +7,8 @@ import { MainLayoutComponent } from './main-layout/main-layout.component';
 import { CalculationComponent } from './calculation/calculation.component';
 import { ExpenseFormComponent } from './expense-form/expense-form.component';
 import { EntryComponent } from './entry/entry.component';
+import { LedgerComponent } from './ledger/ledger.component';
+import { EntryDetailsComponent } from './entry-details/entry-details.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { EntryComponent } from './entry/entry.component';
     MainLayoutComponent,
     CalculationComponent,
     ExpenseFormComponent,
-    EntryComponent
+    EntryComponent,
+    LedgerComponent,
+    EntryDetailsComponent
   ],
   imports: [
     BrowserModule,

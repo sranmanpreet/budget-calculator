@@ -1,8 +1,12 @@
-<div class="entry-container">
+<div class="entry-container" (click)="showDetails()">
     <div class="entry-description">
         Salary
     </div>
     <div class="entry-amount">
         <b>1000</b>
     </div>
+    <div class="delete">
+        <i class="fa fa-times"></i>
+    </div>
 </div>
+<app-entry-details *ngIf="showEntryDetail"></app-entry-details>

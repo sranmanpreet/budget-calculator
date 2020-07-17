@@ -1,0 +1,31 @@
+@import '../../main.scss';
+.income,
+.expense {
+    text-align: center;
+    h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+}
+
+.income {
+    h3 {
+        color: $green;
+    }
+}
+
+.expense {
+    h3 {
+        color: $pink;
+    }
+}
+
+.entries {
+    border-radius: 15px;
+    overflow-y: auto;
+    height: auto;
+}
+
+.entry {
+    padding: 2px 15px;
+}
