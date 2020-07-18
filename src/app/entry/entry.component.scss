@@ -41,9 +41,10 @@
     }
     &:hover {
         background: $primary;
-        cursor: pointer;
         .entry-description {
             color: $white;
+            cursor: pointer;
+            text-decoration: underline;
         }
         .entry-amount {
             color: darken($color: $green, $amount: 10);
