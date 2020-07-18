@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { LedgerService } from '../shared/ledger.service';
 import { Entry } from '../shared/entry.model';
@@ -10,9 +10,16 @@ import { Entry } from '../shared/entry.model';
 })
 export class ExpenseFormComponent implements OnInit {
 
+  @Input() entry: Entry = new Entry();
+  @ViewChild('expenseForm') expenseForm: NgForm;
+
   constructor(private ledgerService: LedgerService) { }
 
   ngOnInit(): void {
+    if(this.expenseForm){
+      this.expenseForm.value.amount = this.entry.amount;
+      this.expenseForm.value.description = this.entry.description;
+    }
   }
 
   onSubmit(f: NgForm){

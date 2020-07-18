@@ -16,7 +16,6 @@ export class LedgerComponent implements OnInit {
   ngOnInit(): void {
     this.incomes = this.ledgerService.getAllIncomes();
     this.expenses = this.ledgerService.getAllExpenses();
-    this.ledgerService.calculateBalance();
   }
 
 }

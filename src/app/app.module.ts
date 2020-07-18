@@ -9,7 +9,6 @@ import { CalculationComponent } from './calculation/calculation.component';
 import { ExpenseFormComponent } from './expense-form/expense-form.component';
 import { EntryComponent } from './entry/entry.component';
 import { LedgerComponent } from './ledger/ledger.component';
-import { EntryDetailsComponent } from './entry-details/entry-details.component';
 
 @NgModule({
   declarations: [
@@ -18,8 +17,7 @@ import { EntryDetailsComponent } from './entry-details/entry-details.component';
     CalculationComponent,
     ExpenseFormComponent,
     EntryComponent,
-    LedgerComponent,
-    EntryDetailsComponent
+    LedgerComponent
   ],
   imports: [
     BrowserModule,

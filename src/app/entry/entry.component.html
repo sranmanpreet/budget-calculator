@@ -5,8 +5,30 @@
     <div #entryAmount class="entry-amount">
         <b>{{entry.amount}}</b>
     </div>
-    <div class="delete">
+    <div class="delete" (click)="delete()">
         <i class="fa fa-times"></i>
     </div>
 </div>
-<app-entry-details *ngIf="showEntryDetail"></app-entry-details>
+<form #expenseForm="ngForm" (ngSubmit)="updateEntry()">
+    <div #modal class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Edit</p>
+                <button class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body columns is-mobile is-variable is-0-mobile">
+                <div class="column is-one-fifth">
+                    <input class="input is-small is-primary" name="amount" [(ngModel)]="entry.amount" type="number" value="entry.amount" placeholder="Amount" required>
+                </div>
+                <div class="column is-three-fifth">
+                    <input class="input is-small is-primary" name="description" [(ngModel)]="entry.description" type="text" value="entry.description" name="description" placeholder="Description" required>
+                </div>
+            </section>
+            <footer class="modal-card-foot">
+                <button class="button is-primary is-small" type="submit">Update</button>
+                <button class="button is-small" (click)="closeModal()">Cancel</button>
+            </footer>
+        </div>
+    </div>
+</form>

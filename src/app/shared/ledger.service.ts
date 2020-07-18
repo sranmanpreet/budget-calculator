@@ -27,6 +27,7 @@ export class LedgerService {
   }
 
   getAllIncomes() {
+    this.calculateBalance();
     return this.incomes;
   }
 
@@ -59,6 +60,25 @@ export class LedgerService {
       this.incomes.push(entry);
     } else if (entry.amount < 0) {
       this.expenses.push(entry);
+    }
+    this.calculateBalance();
+  }
+  
+  updateEntry(entry: Entry, index: number, isExpense: boolean){
+    if(isExpense){
+      if (entry.amount < 0) {
+        this.expenses[index] = entry;
+      } else if (entry.amount > 0) {
+        this.deleteExpenseEntry(index);
+        this.addEntry(entry);
+      }
+    } else{
+        if (entry.amount > 0) {
+          this.incomes[index] = entry;
+        } else if (entry.amount < 0) {
+          this.deleteIncomeEntry(index);
+          this.addEntry(entry);
+        }
     }
     this.calculateBalance();
   }
