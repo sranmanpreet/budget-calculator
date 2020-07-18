@@ -18,6 +18,13 @@
         border-radius: 3px;
         margin-left: auto;
     }
+    .is-expense-description {
+        color: $pink;
+    }
+    .is-expense-amount {
+        color: $pink;
+        background: lighten($color: $pink, $amount: 20);
+    }
     .delete {
         opacity: 0;
         transition-delay: 0.1s;

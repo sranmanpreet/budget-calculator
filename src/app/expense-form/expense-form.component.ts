@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { LedgerService } from '../shared/ledger.service';
+import { Entry } from '../shared/entry.model';
 
 @Component({
   selector: 'app-expense-form',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExpenseFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ledgerService: LedgerService) { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(f: NgForm){
+    if(f.valid){
+      let entry = new Entry();
+      entry.amount = f.value.amount;
+      entry.description = f.value.description;
+      this.ledgerService.addEntry(entry);
+      f.reset();
+    }
   }
 
 }

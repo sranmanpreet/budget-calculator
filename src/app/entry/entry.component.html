@@ -1,9 +1,9 @@
 <div class="entry-container" (click)="showDetails()">
-    <div class="entry-description">
-        Salary
+    <div #entryDescription class="entry-description">
+        {{entry.description}}
     </div>
-    <div class="entry-amount">
-        <b>1000</b>
+    <div #entryAmount class="entry-amount">
+        <b>{{entry.amount}}</b>
     </div>
     <div class="delete">
         <i class="fa fa-times"></i>

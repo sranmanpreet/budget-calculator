@@ -1,10 +1,10 @@
 <div class="expense-form-container container">
-    <form class="columns is-mobile is-variable is-0-mobile">
+    <form #expenseForm="ngForm" class="columns is-mobile is-variable is-0-mobile" (ngSubmit)="onSubmit(expenseForm)">
         <div class="column is-one-fifth">
-            <input class="input is-small" type="number" placeholder="Amount">
+            <input class="input is-small" name="amount" ngModel type="number" placeholder="Amount" required>
         </div>
         <div class="column is-three-fifth">
-            <input class="input is-small" type="text" name="description" placeholder="Description">
+            <input class="input is-small" name="description" ngModel type="text" name="description" placeholder="Description" required>
         </div>
         <div class="column is-one-fifth">
             <button class="button is-primary is-small" type="submit">Add</button>

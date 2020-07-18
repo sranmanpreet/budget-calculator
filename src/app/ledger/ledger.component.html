@@ -2,44 +2,16 @@
     <div class="income column">
         <h3>Income</h3>
         <div class="entries">
-            <div class="entry">
-                <app-entry></app-entry>
-                <app-entry></app-entry>
-                <app-entry></app-entry>
-                <app-entry></app-entry>
-                <app-entry></app-entry>
-                <app-entry></app-entry>
-                <app-entry></app-entry>
-                <app-entry></app-entry>
-                <app-entry></app-entry>
-                <app-entry></app-entry>
-                <app-entry></app-entry>
-                <app-entry></app-entry>
-                <app-entry></app-entry>
-                <app-entry></app-entry>
+            <div class="entry" *ngFor="let income of incomes">
+                <app-entry [entry]="income"></app-entry>
             </div>
         </div>
     </div>
     <div class="expense column">
         <h3>Expense</h3>
         <div class="entries">
-            <div class="entry">
-                <app-entry></app-entry>
-                <app-entry></app-entry>
-                <app-entry></app-entry>
-                <app-entry></app-entry>
-                <app-entry></app-entry>
-                <app-entry></app-entry>
-                <app-entry></app-entry>
-                <app-entry></app-entry>
-                <app-entry></app-entry>
-                <app-entry></app-entry>
-                <app-entry></app-entry>
-                <app-entry></app-entry>
-                <app-entry></app-entry>
-                <app-entry></app-entry>
-                <app-entry></app-entry>
-                <app-entry></app-entry>
+            <div class="entry" *ngFor="let expense of expenses">
+                <app-entry [entry]="expense" [isExpense]="'true'"></app-entry>
             </div>
         </div>
     </div>

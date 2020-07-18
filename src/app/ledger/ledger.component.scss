@@ -12,11 +12,21 @@
     h3 {
         color: $green;
     }
+    .entries {
+        .entry {
+            color: $green;
+        }
+    }
 }
 
 .expense {
     h3 {
         color: $pink;
+    }
+    .entries {
+        .entry {
+            color: $pink;
+        }
     }
 }
 
